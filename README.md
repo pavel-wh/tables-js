@@ -49,3 +49,8 @@
 ### 5. Add webpack loaders
 
 `npm install css-loader sass-loader sass babel-loader @babel/core @babel/preset-env --save-dev`
+`npm install --save @babel/polyfill`
+
+### 6. Configure assembling environment
+
+`npm install --save-dev cross-env webpack-dev-server`
