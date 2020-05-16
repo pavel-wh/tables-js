@@ -2,7 +2,7 @@
 const path = require('path')
 
 // Webpack Plugins
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -13,6 +13,21 @@ const isDev = !isProd
 
 // Assembly environment functions
 const filename = ext => isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`
+const jsLoaders = () => {
+  const loaders = [
+    {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  ]
+
+  if (isDev) {
+    loaders.push('eslint-loader')
+  }
+}
+
 
 // Webpack configuration
 module.exports = {
@@ -49,8 +64,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { 
-          from: path.resolve(__dirname, 'src/assets/images/icons/favicon.svg'), 
+        {
+          from: path.resolve(__dirname, 'src/assets/images/icons/favicon.svg'),
           to: path.resolve(__dirname, 'build')
         }
       ],
@@ -75,13 +90,10 @@ module.exports = {
           'sass-loader',
         ],
       },
-      { 
-        test: /\.js$/, 
-        exclude: /node_modules/, 
-        loader: 'babel-loader',
-        options: {
-          "presets": ["@babel/preset-env"]
-        }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: jsLoaders()
       }
     ],
   },
