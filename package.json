@@ -1,0 +1,26 @@
+{
+  "name": "excel_js",
+  "version": "1.0.0",
+  "description": "JavaScript, Webpack, Babel, ESLint, SCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavel-wh/excel_js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Webpack",
+    "Babel",
+    "ESLint",
+    "SCSS"
+  ],
+  "author": "pB",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavel-wh/excel_js/issues"
+  },
+  "homepage": "https://github.com/pavel-wh/excel_js#readme"
+}
