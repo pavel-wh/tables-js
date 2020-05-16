@@ -16,3 +16,7 @@ Git
       1.0.0
     Development  
       1.0.1
+
+## Git commands  
+
+`git checkout -b "webpack"` - create new branch and switch to it  
