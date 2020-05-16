@@ -45,3 +45,7 @@
 ### 4. Install webpack plugins
 
 `npm install --save-dev html-webpack-plugin clean-webpack-plugin copy-webpack-plugin mini-css-extract-plugin`
+
+### 5. Add webpack loaders
+
+`npm install css-loader sass-loader sass babel-loader @babel/core @babel/preset-env --save-dev`

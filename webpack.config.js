@@ -15,10 +15,10 @@ module.exports = {
     path: path.resolve(__dirname, 'build')
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.scss'],
     alias: {
-      @: path.resolve(__dirname, 'src'),
-      @core: path.resolve(__dirname, 'src/core')
+      '@': path.resolve(__dirname, 'src'),
+      '@core': path.resolve(__dirname, 'src/core')
     }
   },
   plugins: [
@@ -37,5 +37,25 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'bundle.[hash].css'
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/, 
+        loader: 'babel-loader',
+        options: {
+          "presets": ["@babel/preset-env"]
+        }
+      }
+    ],
+  },
 }
