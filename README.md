@@ -41,3 +41,7 @@
 ### 3. Install dependencies
 
 `npm install webpack webpack-cli --save-dev`
+
+### 4. Install webpack plugins
+
+`npm install --save-dev html-webpack-plugin clean-webpack-plugin copy-webpack-plugin mini-css-extract-plugin`
