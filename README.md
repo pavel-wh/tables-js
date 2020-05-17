@@ -58,3 +58,9 @@
 ### 7. Add ESLint
 
 `npm install --save-dev eslint eslint-loader babel-eslint eslint-config-google`
+
+### Git push remote repo
+
+`git add --all`
+`git commit -m "Finished config project"`
+`git push -u origin webpack`
