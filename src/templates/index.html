@@ -5,11 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>JavaScript Excel Analog App</title>
+  <base href="/">
 </head>
 <body>
-  <!-- Hello -->
+  <!-- App container -->
   <div id="app" class="container">
-    <h1>Hello!!!</h1>
+    <div class="excel">
+      <div class="excel__header">
+        <input 
+          type="text" 
+          id="table-name"
+          class="excel__input"
+          value="Table name"
+        >
+        <div class="excel__container">
+          <button class="excel__button">
+            <i class="material-icons">delete</i>
+          </button>
+          <button class="excel__button">
+            <i class="material-icons">exit_to_app</i>
+          </button>
+        </div>
+      </div>
+      <div class="excel__toolbar">
+      </div>
+      <div class="excel__formula">
+      </div>
+      <div class="excel__table"></div>
+    </div>
   </div>
 </body>
 </html>

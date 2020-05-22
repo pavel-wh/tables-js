@@ -1,0 +1,46 @@
+.excel {
+  position: relative;
+  &__header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px 0;
+    height: $header-height;
+  }
+  &__toolbar {
+    
+  }
+  &__formula {
+
+  }
+  &__table {
+
+  }
+  &__container {
+
+  }
+  &__input {
+    padding: 2px 7px;
+    color: $text-color;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    outline: transparent;
+    &:hover {
+      border: 2px solid transparentize($addition-color, 0.75);
+    }
+    &:focus {
+      border: 2px solid $addition-color;
+    }
+  }
+  &__button {
+    border: 0;
+    @include button();
+  }
+}

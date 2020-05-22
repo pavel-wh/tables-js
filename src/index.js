@@ -1,4 +1,3 @@
-import './module'
-import './assets/scss/base'
+import './assets/scss/all'
 
 console.log('app work')
