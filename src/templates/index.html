@@ -10,80 +10,25 @@
 <body>
   <!-- App container -->
   <div id="app" class="container">
-    <div class="excel">
-      <div class="excel__header">
-        <input 
-          type="text" 
-          id="table-name"
-          class="excel__input"
-          value="Table name"
-        >
-        <div class="excel__container">
-          <button class="excel__button">
-            <i class="material-icons">delete</i>
-          </button>
-          <button class="excel__button">
-            <i class="material-icons">exit_to_app</i>
-          </button>
+    <div class="dashboard">
+      <div class="dashboard__header">
+        <h1 class="dashboard__title">Excel Dashboard</h1>
+      </div>
+      <div class="dashboard__toolbar">
+        <button class="dashboard__add">New Table<br>+</button>
+      </div>
+      <div class="dashboard__container">
+        <div class="dashboard__description">
+          <span>Name</span>
+          <span>Date open</span>
         </div>
+        <ul class="dashboard__list">
+          <li class="dashboard__item">
+            <a href="#" class="dashboard__name">Table name</a>
+            <strong class="dashboard__date">20.06.2020</strong>
+          </li>
+        </ul>
       </div>
-      <div class="excel__toolbar">
-        <button class="excel__button">
-          <i class="material-icons">format_align_left</i>
-        </button>
-        <button class="excel__button">
-          <i class="material-icons">format_align_center</i>
-        </button>
-        <button class="excel__button">
-          <i class="material-icons">format_align_right</i>
-        </button>
-        <button class="excel__button">
-          <i class="material-icons">format_bold</i>
-        </button>
-        <button class="excel__button">
-          <i class="material-icons">format_italic</i>
-        </button>
-        <button class="excel__button">
-          <i class="material-icons">format_underline</i>
-        </button>
-      </div>
-      <div class="excel__formula">
-        <div class="excel__info">fx</div>
-        <input 
-          type="text" 
-          class="excel__input excel__input_formula"
-        >
-      </div>
-      <table class="excel__table">
-        <thead>
-          <tr class="excel__row">
-            <th class="excel__cell excel__info excel__info_cell"></th>
-            <th class="excel__cell excel__info excel__info_cell">A</th>
-            <th class="excel__cell excel__info excel__info_cell">B</th>
-            <th class="excel__cell excel__info excel__info_cell">C</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="excel__row">
-            <th class="excel__cell excel__info excel__info_cell">1</th>
-            <td class="excel__cell excel__cell_selected" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-          </tr>
-          <tr class="excel__row">
-            <th class="excel__cell excel__info excel__info_cell">2</th>
-            <td class="excel__cell" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-          </tr>
-          <tr class="excel__row">
-            <th class="excel__cell excel__info excel__info_cell">3</th>
-            <td class="excel__cell" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-            <td class="excel__cell" contenteditable></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </body>
