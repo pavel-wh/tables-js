@@ -12,6 +12,11 @@
     "require-jsdoc": "off"
   },
   "extends": [
-    "eslint:recommended", "google"
+    "eslint:recommended",
+    "google",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
   ]
 }

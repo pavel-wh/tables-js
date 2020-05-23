@@ -1,0 +1,22 @@
+@mixin button ($color: $base-color) {
+  position: relative;
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  padding: 3px;
+  text-align: center;
+  color: transparentize($base-color, 0.5);
+  border: 0;
+  outline: transparent;
+  & i {
+    font-size: 18px;
+  }
+  &:active, &.active {
+    color: $addition-color;
+  }
+  &:hover {
+    color: $base-color;
+    background-color: $addition-color;
+    cursor: pointer;
+  }
+}
