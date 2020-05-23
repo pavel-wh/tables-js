@@ -13,20 +13,28 @@
   }
   &__toolbar {
     position: absolute;
-    left: 0;
-    right: 0;
     top: $header-height;
-    height: $toolbar-height;
-    background-color: $addition-color;
-    border-top: 1px solid $text-color;
-    border-bottom: 1px solid $text-color;
-    padding: 7px 10px;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    height: $toolbar-height;
+    padding: 7px 10px;
+    background-color: $addition-color;
+    border-top: 1px solid $text-color;
+    border-bottom: 1px solid $text-color;
   }
   &__formula {
-
+    position: absolute;
+    top: $header-height + $toolbar-height;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: $formula-height;
+    border-bottom: 1px solid $text-color;
   }
   &__table {
 
@@ -49,8 +57,28 @@
     &:focus {
       border: 2px solid $addition-color;
     }
+    &_formula {
+      width: 100%;
+      height: 100%;
+      padding: 4px;
+      font-size: 12px;
+      border-radius: 0;
+    }
   }
   &__button {
     @include button();
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $info-cell-width;
+    height: 100%;
+    font-size: 18px;
+    text-align: center;
+    color: $text-color;
+    font-style: italic;
+    background-color: white;
+    border-right: 1px solid $text-color;
   }
 }
