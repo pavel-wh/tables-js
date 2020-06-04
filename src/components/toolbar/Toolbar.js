@@ -2,6 +2,14 @@ import { ExcelComponent } from '@core/ExcelComponent'
 
 export class Toolbar extends ExcelComponent {
 	static className = `excel__toolbar`
+
+	constructor($root) {
+		super($root, {
+			name: 'Toolbar',
+			listeners: ['click', 'mouseover', 'mouseout'],
+		})
+	}
+
 	toHTML() {
 		return `
 			<button class="excel__button">
@@ -23,5 +31,17 @@ export class Toolbar extends ExcelComponent {
 				<i class="material-icons">format_underline</i>
 			</button>
 		`
+	}
+
+	onMouseover() {
+		console.log('Toolbar: onMouseover', event)
+	}
+
+	onMouseout() {
+		console.log('Toolbar: onMouseout', event)
+	}
+
+	onClick() {
+		console.log('Toolbar: onClick', event)
 	}
 }

@@ -21,6 +21,10 @@ class DOM {
 		this.$el.addEventListener(eventType, callback)
 	}
 
+	off(eventType, callback) {
+		this.$el.removeEventListener(eventType, callback)
+	}
+
 	append(node) {
 		if (node instanceof DOM) {
 			node = node.$el
@@ -40,10 +44,14 @@ export function $(selector) {
 	return new DOM(selector)
 }
 
-$.create = (tagName, classes = '') => {
+$.create = (tagName, classes = '', attribute = '') => {
 	const el = document.createElement(tagName)
 	if (classes) {
-		el.classList.add(classes)
+		const classesList = classes.split(' ')
+		el.classList.add(...classesList)
+	}
+	if (attribute) {
+		el.setAttribute(attribute, true)
 	}
 	return $(el)
 }
