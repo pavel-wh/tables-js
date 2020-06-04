@@ -92,6 +92,7 @@
     align-items: center;
     width: $cell-width;
     min-width: $info-cell-width;
+    min-height: $row-height;
     word-wrap: break-word;
     background-color: white;
     border: 1px solid $text-color;
@@ -99,7 +100,9 @@
     border-left: none;
     outline: transparent;
     &:first-child {
+      position: relative;
       width: $info-cell-width;
+      height: auto;
     }
     &:not(.excel__info) {
       justify-content: flex-start;
