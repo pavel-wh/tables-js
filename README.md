@@ -20,47 +20,48 @@
 ⋅⋅⋅⋅⋅⋅Development  
 ⋅⋅⋅⋅⋅⋅⋅⋅⋅1.0.1
 
-## Steps in project
+## Steps in project  
 
-### 1. Create project folder and init project
+### 1. Create project folder and init project  
 
-`mkdir excel_js`
-`cd excel_js`
-`npm init -y`
+`mkdir excel_js`  
+`cd excel_js`  
+`npm init -y`  
 
 ### 2. Git init commands  
 
-`echo "# git" >> README.md`
-`git init`
-`git add README.md`
-`git commit -m "init repo"`
-`git remote add origin https://github.com/pavel-wh/excel_js.git`
-`git push -u origin master`
+`echo "# git" >> README.md`  
+`git init`  
+`git add README.md`  
+`git commit -m "init repo"`  
+`git remote add origin https://github.com/pavel-wh/excel_js.git`  
+`git push -u origin master`  
 `git checkout -b "webpack"` - create new branch and switch to it  
 
-### 3. Install dependencies
+### 3. Install dependencies  
 
-`npm install --save-dev webpack webpack-cli`
+`npm install --save-dev webpack webpack-cli`  
 
-### 4. Install webpack plugins
+### 4. Install webpack plugins  
 
-`npm install --save-dev html-webpack-plugin clean-webpack-plugin copy-webpack-plugin mini-css-extract-plugin`
+`npm install --save-dev html-webpack-plugin clean-webpack-plugin copy-webpack-plugin mini-css-extract-plugin`  
 
-### 5. Add webpack loaders
+### 5. Add webpack loaders  
 
-`npm install --save-dev css-loader sass-loader sass babel-loader @babel/core @babel/preset-env`
-`npm install --save @babel/polyfill`
+`npm install --save-dev css-loader sass-loader sass babel-loader @babel/core @babel/preset-env`  
+`npm install --save @babel/polyfill`  
+`npm i --save-dev @babel/plugin-proposal-class-properties`  
 
-### 6. Configure assembling environment
+### 6. Configure assembling environment  
 
-`npm install --save-dev cross-env webpack-dev-server`
+`npm install --save-dev cross-env webpack-dev-server`  
 
-### 7. Add ESLint
+### 7. Add ESLint  
 
-`npm install --save-dev eslint eslint-loader babel-eslint eslint-config-google`
+`npm install --save-dev eslint eslint-loader babel-eslint eslint-config-google`  
 
-### Git push remote repo
+### Git push remote repo  
 
-`git add --all`
-`git commit -m "Finished config project"`
-`git push -u origin webpack`
+`git add --all`  
+`git commit -m "Finished config project"`  
+`git push -u origin webpack`  
