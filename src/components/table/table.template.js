@@ -14,23 +14,11 @@ function createRow(content, index = '') {
 }
 
 function createColumnt(col) {
-	return `
-    <div class="excel__column">${col}</div>
-  `
+	return `<div class="excel__column">${col}</div>`
 }
 
-function createCell(n = 0) {
-	const str = '<div class="excel__cell" contenteditable></div>'
-	let strings = []
-
-	if (n === 0) {
-		return ''
-	} else if (n === 1) {
-		return str
-	} else {
-		strings = new Array(n).fill(str).join('')
-		return strings
-	}
+function createCell() {
+	return `<div class="excel__cell" contenteditable></div>`
 }
 
 function toChar(index) {
@@ -48,7 +36,8 @@ export function createTable(rowsCount = 26) {
 	rows.push(createRow(cols))
 
 	for (let i = 0; i < rowsCount; i++) {
-		rows.map(createRow(createCell(rowsCount), i + 1))
+		const cells = new Array(colsCount).fill('').map(createCell).join('')
+		rows.push(createRow(cells, i + 1))
 	}
 
 	return rows.join('')
