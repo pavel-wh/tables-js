@@ -2,6 +2,7 @@
   position: relative;
   max-width: 100%;
   height: 100%;
+  // Header component styles
   &__header {
     position: absolute;
     top: 0;
@@ -13,6 +14,7 @@
     height: $header-height;
     padding: 0 4px;
   }
+  // Toolbar component styles
   &__toolbar {
     position: absolute;
     top: $header-height;
@@ -27,6 +29,7 @@
     border-top: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
   }
+  // Formula component styles
   &__formula {
     position: absolute;
     top: $header-height + $toolbar-height;
@@ -38,6 +41,7 @@
     height: $formula-height;
     border-bottom: 1px solid $text-color;
   }
+  // Table component styles
   &__table {
     position: absolute;
     top: $header-height + $toolbar-height + $formula-height;
@@ -47,10 +51,94 @@
     width: 100vw;
     height: calc(100vh - #{$header-height + $toolbar-height + $formula-height});
     overflow-x: auto;
-    border-collapse: collapse;
-    border: 0;
     $top-indent: $header-height + $toolbar-height + $formula-height;
   }
+  &__column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $cell-width;
+    min-width: $cell-width;
+    height: 100%;
+    background-color: whitesmoke;
+    border-right: 1px solid $text-color;
+    border-bottom: 1px solid $text-color;
+  }
+  &__row {
+    display: flex;
+    height: $row-height;
+    min-height: $row-height;
+  }
+  &__data {
+    display: flex;
+  }
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $info-cell-width;
+    height: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: $text-color;
+    background-color: whitesmoke;
+    border-right: 1px solid $text-color;
+    border-bottom: 1px solid $text-color;
+    &_cell {
+      font-size: 12px;
+      font-style: normal;
+      background-color: whitesmoke;
+      border-bottom: 1px solid $text-color;
+    }
+    &--formula {
+      font-size: 18px;
+      font-style: italic;
+      border-bottom: 0;
+    }
+  }
+  &__cell {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: $cell-width;
+    min-width: $info-cell-width;
+    word-wrap: break-word;
+    white-space: nowrap;
+    background-color: white;
+    border: 1px solid $text-color;
+    border-top: none;
+    border-left: none;
+    outline: transparent;
+    padding: 5px;
+    text-align: left;
+    &_selected {
+      border: none;
+      z-index: 1;
+      box-shadow: -1.2px -1.2px 0 0px $addition-color, inset 0.7px 0.7px 0 0 $addition-color;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: calc(100% + 1.4px);
+        width: 2px;
+        background-color: $addition-color;
+        bottom: 0;
+        right: 0;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: calc(100% + 1.4px);
+        height: 2px;
+        background-color: $addition-color;
+        bottom: 0;
+        left: -1.4px;
+      }
+    }
+  }
+  // Shared components styles
   &__container {
     position: relative;
     display: flex;
@@ -80,55 +168,5 @@
   }
   &__button {
     @include button();
-  }
-  &__row {
-    display: flex;
-    height: $row-height;
-    min-height: $row-height;
-  }
-  &__cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: $cell-width;
-    min-width: $info-cell-width;
-    word-wrap: break-word;
-    background-color: white;
-    border: 1px solid $text-color;
-    border-top: none;
-    border-left: none;
-    outline: transparent;
-    &:first-child {
-      width: $info-cell-width;
-    }
-    &:not(.excel__info) {
-      justify-content: flex-start;
-      padding: 4px;
-    }
-    &_selected {
-      position: relative;
-      z-index: 1;
-      border: none;
-      outline: 2px solid $addition-color;
-    }
-  }
-  &__info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: $info-cell-width;
-    height: 100%;
-    font-size: 18px;
-    text-align: center;
-    color: $text-color;
-    font-style: italic;
-    background-color: white;
-    border-right: 1px solid $text-color;
-    &_cell {
-      font-size: 12px;
-      font-style: normal;
-      background-color: whitesmoke;
-      border-bottom: 1px solid $text-color;
-    }
   }
 }
