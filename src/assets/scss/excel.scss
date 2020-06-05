@@ -54,6 +54,7 @@
     $top-indent: $header-height + $toolbar-height + $formula-height;
   }
   &__column {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,16 +65,47 @@
     border-right: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
   }
+  &__column-resize {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 2px;
+    height: 100%;
+    background-color: $addition-color;
+    cursor: col-resize;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
   &__row {
     display: flex;
     height: $row-height;
     min-height: $row-height;
     &:first-child {}
   }
+  &__row-resize {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $addition-color;
+    cursor: row-resize;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
   &__data {
     display: flex;
   }
   &__info {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,38 +136,38 @@
     align-items: center;
     width: $cell-width;
     min-width: $info-cell-width;
-    word-wrap: break-word;
+    padding: 5px;
+    text-align: left;
     white-space: nowrap;
+    word-wrap: break-word;
     background-color: white;
     border: 1px solid $text-color;
     border-top: none;
     border-left: none;
     outline: transparent;
-    padding: 5px;
-    text-align: left;
     &_selected {
-      border: none;
       z-index: 1;
+      border: none;
       box-shadow: -1.2px -1.2px 0 0px $addition-color, inset 0.7px 0.7px 0 0 $addition-color;
       &:before {
         content: "";
-        display: block;
         position: absolute;
-        height: calc(100% + 1.4px);
-        width: 2px;
-        background-color: $addition-color;
-        bottom: 0;
         right: 0;
+        bottom: 0;
+        display: block;
+        width: 2px;
+        height: calc(100% + 1.4px);
+        background-color: $addition-color;
       }
       &:after {
         content: "";
-        display: block;
         position: absolute;
+        bottom: 0;
+        left: -1.4px;
+        display: block;
         width: calc(100% + 1.4px);
         height: 2px;
         background-color: $addition-color;
-        bottom: 0;
-        left: -1.4px;
       }
     }
   }

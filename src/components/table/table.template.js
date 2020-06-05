@@ -1,3 +1,4 @@
+// Helper
 const CHARS = {
 	A: 65,
 	Z: 90,
@@ -5,16 +6,24 @@ const CHARS = {
 
 // Pure functions
 function createRow(content, index = '') {
+	const resizer = index ? '<div class="excel__row-resize"></div>' : ''
 	return `
     <div class="excel__row">
-      <div class="excel__info">${index}</div>
+      <div class="excel__info">
+        ${index}
+        ${resizer}
+      </div>
       <div class="excel__data">${content}</div>
     </div>
   `
 }
 
 function createColumnt(col) {
-	return `<div class="excel__column">${col}</div>`
+	return `
+    <div class="excel__column">
+      ${col}
+      <div class="excel__column-resize"></div>
+    </div>`
 }
 
 function createCell() {
