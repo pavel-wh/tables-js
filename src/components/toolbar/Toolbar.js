@@ -6,7 +6,7 @@ export class Toolbar extends ExcelComponent {
 	constructor($root) {
 		super($root, {
 			name: 'Toolbar',
-			listeners: ['click', 'mouseover', 'mouseout'],
+			// listeners: ['click', 'mouseover', 'mouseout'],
 		})
 	}
 

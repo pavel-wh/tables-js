@@ -59,7 +59,7 @@
     justify-content: center;
     align-items: center;
     width: $cell-width;
-    min-width: $cell-width;
+    min-width: $info-cell-width;
     height: 100%;
     background-color: whitesmoke;
     border-right: 1px solid $text-color;
@@ -133,7 +133,7 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: $cell-width;
     min-width: $info-cell-width;
     padding: 5px;
