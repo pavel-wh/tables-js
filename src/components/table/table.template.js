@@ -10,7 +10,7 @@ function createRow(content, index = '') {
 		? '<div class="excel__row-resize" data-resize="row"></div>'
 		: ''
 	return `
-    <div class="excel__row">
+    <div class="excel__row" data-type="resizable" ${index ? 'data-row="' + (index - 1) + '"' : ''}>
       <div class="excel__info">
         ${index}
         ${resizer}
@@ -20,16 +20,16 @@ function createRow(content, index = '') {
   `
 }
 
-function createColumnt(col) {
+function createColumn(col, index) {
 	return `
-    <div class="excel__column">
+    <div class="excel__column" data-type="resizable" data-col="${index}">
       ${col}
       <div class="excel__column-resize" data-resize="col"></div>
     </div>`
 }
 
-function createCell() {
-	return `<div class="excel__cell" contenteditable></div>`
+function createCell(_, col) {
+	return `<div class="excel__cell" contenteditable data-col="${col}"></div>`
 }
 
 function toChar(index) {
@@ -42,7 +42,7 @@ export function createTable(rowsCount = 26) {
 
 	const cols = new Array(colsCount)
 		.fill('')
-		.map((el, index) => createColumnt(toChar(index)))
+		.map((el, index) => createColumn(toChar(index), index))
 		.join('')
 	rows.push(createRow(cols))
 
