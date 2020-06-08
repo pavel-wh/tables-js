@@ -1,5 +1,6 @@
 import { ExcelComponent } from '@core/ExcelComponent'
 import { createTable } from '@/components/table/table.template'
+import { shouldResize } from '@/components/table/table.helpers'
 import { toResize } from '@/components/table/table.resizer'
 
 export class Table extends ExcelComponent {
@@ -21,7 +22,9 @@ export class Table extends ExcelComponent {
 	}
 
 	onMousedown() {
-		toResize(event, this.$root)
+		if (shouldResize(event)) {
+			toResize(event, this.$root)
+		}
 	}
 
 	onMousemove() {
@@ -29,8 +32,6 @@ export class Table extends ExcelComponent {
 	}
 
 	onMouseup() {
-		if (event.target.dataset.resize) {
-			console.log(`Stop resizing ${event.target.dataset.resize}`)
-		}
+		console.log('Table: onMouseup')
 	}
 }
