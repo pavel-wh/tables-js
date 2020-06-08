@@ -8,7 +8,4 @@ import './assets/scss/all'
 const excel = new Excel('#app', {
 	components: [Header, Toolbar, Formula, Table],
 })
-
-console.log('Excel is: ', excel)
-
 excel.render()
