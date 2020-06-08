@@ -43,6 +43,10 @@ class DOM {
 		return this.$el.dataset
 	}
 
+	get params() {
+		return this.$el
+	}
+
 	closest(selector) {
 		return $(this.$el.closest(selector))
 	}
@@ -58,6 +62,11 @@ class DOM {
 	css(styles = {}) {
 		Object.keys(styles).forEach((key) => (this.$el.style[key] = styles[key]))
 	}
+
+	deleteAttribute(attribute) {
+		return this.$el.removeAttribute(attribute)
+	}
+
 }
 
 export function $(selector) {
