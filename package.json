@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --open",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "eslint": "eslint '**/*{.js,.jsx}'",
-    "eslint:fix": "eslint '**/*{.js,.jsx}' --fix",
-    "stylelint": "stylelint '**/*{.css,.scss}'",
-    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
+    "eslint": "eslint '**/*.js'",
+    "eslint:fix": "eslint '**/*.js' --fix",
+    "stylelint": "stylelint '**/*.scss'",
+    "stylelint:fix": "stylelint '**/*.scss' --fix",
     "lint-staged": "lint-staged"
   },
   "husky": {
@@ -19,10 +19,14 @@
     }
   },
   "lint-staged": {
-    "*.{js, jsx}": [
-      "eslint --fix"
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
     ],
-    "*.(css, scss)": "stylelint --fix"
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
