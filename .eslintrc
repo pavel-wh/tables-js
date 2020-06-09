@@ -8,13 +8,14 @@
   "extends": [
     "eslint:recommended",
     "google",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "rules": {
     "semi": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "prettier/prettier": "error"
   },
   "plugins": [
     "prettier"

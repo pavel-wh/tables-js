@@ -4,7 +4,6 @@
   "description": "JavaScript, Webpack, Babel, ESLint, SCSS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --open",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "eslint": "eslint '**/*.js'",
@@ -20,8 +19,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ],
     "*.scss": [
       "stylelint --fix"
