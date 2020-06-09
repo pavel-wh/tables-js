@@ -7,8 +7,9 @@ export function toResize (event, $root) {
   const coords = $parent.getCoords()
   const type = $resizer.dataset.resize
   const sideProp = type === 'col' ? 'height' : 'width'
-  const sideParam = type === 'col' ? 'scrollWidth' : 'scrollHeight'
+  const sideParam = type === 'col' ? 'scrollHeight' : 'scrollWidth'
   let value
+
 
   $resizer.css({
     opacity: 1,
