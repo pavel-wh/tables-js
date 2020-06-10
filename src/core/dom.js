@@ -1,7 +1,6 @@
 class DOM {
 	constructor(selector) {
-		this.$el =
-			typeof selector === 'string' ? document.querySelector(selector) : selector
+		this.$el = typeof selector === 'string' ? document.querySelector(selector) : selector
 	}
 
 	html(markup) {
@@ -66,7 +65,6 @@ class DOM {
 	deleteAttribute(attribute) {
 		return this.$el.removeAttribute(attribute)
 	}
-
 }
 
 export function $(selector) {

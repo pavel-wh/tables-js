@@ -6,9 +6,7 @@ const CHARS = {
 
 // Pure functions
 function createRow(content, index = '') {
-	const resizer = index
-		? '<div class="excel__row-resize" data-resize="row"></div>'
-		: ''
+	const resizer = index ? '<div class="excel__row-resize" data-resize="row"></div>' : ''
 	return `
     <div class="excel__row" data-type="resizable" ${index ? 'data-row="' + (index - 1) + '"' : ''}>
       <div class="excel__info">

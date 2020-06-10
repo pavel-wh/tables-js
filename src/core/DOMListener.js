@@ -12,9 +12,7 @@ export class DOMListener {
 		this.listeners.forEach((listener) => {
 			const method = getMethodName(listener)
 			if (!this[method]) {
-				throw new Error(
-					`Method ${method} is not implemented in ${name} component`
-				)
+				throw new Error(`Method ${method} is not implemented in ${name} component`)
 			}
 			// redefining a method to a method with its context so that you can delete it later on wrap for removeEventListener
 			this[method] = this[method].bind(this)

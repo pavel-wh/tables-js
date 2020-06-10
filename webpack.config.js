@@ -12,8 +12,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
 // Assembly environment functions
-const filename = (ext) =>
-	isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`)
 
 const jsLoaders = () => {
 	const loaders = [
