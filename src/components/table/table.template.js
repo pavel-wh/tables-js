@@ -26,8 +26,10 @@ function createColumn(col, index) {
     </div>`
 }
 
-function createCell(_, col) {
-	return `<div class="excel__cell" contenteditable data-col="${col}"></div>`
+function createCell(row) {
+	return function (_, col) {
+		return `<div class="excel__cell" contenteditable data-id="${row}:${col}" data-col="${col}"></div>`
+	}
 }
 
 function toChar(index) {
@@ -44,9 +46,9 @@ export function createTable(rowsCount = 26) {
 		.join('')
 	rows.push(createRow(cols))
 
-	for (let i = 0; i < rowsCount; i++) {
-		const cells = new Array(colsCount).fill('').map(createCell).join('')
-		rows.push(createRow(cells, i + 1))
+	for (let row = 0; row < rowsCount; row++) {
+		const cells = new Array(colsCount).fill('').map(createCell(row)).join('')
+		rows.push(createRow(cells, row + 1))
 	}
 
 	return rows.join('')

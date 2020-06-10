@@ -1,4 +1,3 @@
-/* eslint-disable no-invalid-this */
 import { $ } from '@/core/dom'
 
 export function toResize(event, $root) {
