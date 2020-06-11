@@ -93,6 +93,10 @@ class DOM {
 		this.$el.focus()
 		return this
 	}
+
+	text(text) {
+		this.$el.textContent = text
+	}
 }
 
 export function $(selector) {
