@@ -39,6 +39,7 @@
     align-items: center;
     justify-content: flex-start;
     height: $formula-height;
+    background-color: white;
     border-bottom: 1px solid $text-color;
   }
   // Table component styles
@@ -201,7 +202,7 @@
     padding: 2px 7px;
     color: $text-color;
     font-size: 18px;
-    line-height: 22px;
+    line-height: 27px;
     border: 2px solid transparent;
     border-radius: 2px;
     outline: transparent;
