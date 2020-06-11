@@ -5,15 +5,19 @@
     "browser": true,
     "node": true
   },
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "semi": "off",
     "arrow-parens": "off",
     "comma-dangle": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "prettier/prettier": "error"
   },
-  "extends": [
-    "eslint:recommended",
-    "google",
+  "plugins": [
     "prettier"
   ]
 }

@@ -9,8 +9,8 @@
     right: 0;
     left: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     height: $header-height;
     padding: 0 4px;
   }
@@ -21,8 +21,8 @@
     right: 0;
     left: 0;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     height: $toolbar-height;
     padding: 7px 10px;
     background-color: $addition-color;
@@ -36,9 +36,10 @@
     right: 0;
     left: 0;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     height: $formula-height;
+    background-color: white;
     border-bottom: 1px solid $text-color;
   }
   // Table component styles
@@ -53,11 +54,12 @@
     overflow-x: auto;
     $top-indent: $header-height + $toolbar-height + $formula-height;
   }
+
   &__column {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: $cell-width;
     min-width: $info-cell-width;
     height: 100%;
@@ -66,95 +68,107 @@
     border-bottom: 1px solid $text-color;
     user-select: none;
   }
+
   &__column-resize {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 1000;
     display: block;
     width: 2px;
     height: 100%;
     background-color: $addition-color;
     cursor: col-resize;
     opacity: 0;
-    z-index: 1000;
+
     &:hover {
       opacity: 1;
     }
   }
+
   &__row {
     display: flex;
     height: $row-height;
     min-height: $row-height;
+
     &:first-child {}
   }
+
   &__row-resize {
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 1000;
     display: block;
     width: 100%;
     height: 2px;
     background-color: $addition-color;
     cursor: row-resize;
     opacity: 0;
-    z-index: 1000;
+
     &:hover {
       opacity: 1;
     }
   }
+
   &__data {
     display: flex;
   }
+
   &__info {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-width: $info-cell-width;
     height: 100%;
+    color: $text-color;
     font-size: 12px;
     text-align: center;
-    color: $text-color;
     background-color: whitesmoke;
     border-right: 1px solid $text-color;
     border-bottom: 1px solid $text-color;
     user-select: none;
+
     &_cell {
       font-size: 12px;
       font-style: normal;
       background-color: whitesmoke;
       border-bottom: 1px solid $text-color;
     }
+
     &--formula {
       font-size: 18px;
       font-style: italic;
       border-bottom: 0;
     }
   }
+
   &__cell {
     position: relative;
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-start;
     width: $cell-width;
     min-width: $info-cell-width;
     padding: 5px;
-    text-align: left;
     white-space: nowrap;
+    text-align: left;
     word-wrap: break-word;
     background-color: white;
     border: 1px solid $text-color;
-    border-top: none;
-    border-left: none;
+    border-top: 0;
+    border-left: 0;
     outline: transparent;
+
     &_selected {
       z-index: 1;
-      border: none;
-      box-shadow: -1.2px -1.2px 0 0px $addition-color, inset 0.7px 0.7px 0 0 $addition-color;
+      border: 0;
+      box-shadow: -1.2px -1.2px 0 0px $addition-color, inset .7px .7px 0 0 $addition-color;
+
       &:before {
-        content: "";
         position: absolute;
         right: 0;
         bottom: 0;
@@ -162,9 +176,10 @@
         width: 2px;
         height: calc(100% + 1.4px);
         background-color: $addition-color;
-      }
-      &:after {
         content: "";
+      }
+
+      &:after {
         position: absolute;
         bottom: 0;
         left: -1.4px;
@@ -172,6 +187,7 @@
         width: calc(100% + 1.4px);
         height: 2px;
         background-color: $addition-color;
+        content: "";
       }
     }
   }
@@ -180,21 +196,25 @@
     position: relative;
     display: flex;
   }
+
   &__input {
     height: 20px;
     padding: 2px 7px;
-    font-size: 18px;
-    line-height: 22px;
     color: $text-color;
+    font-size: 18px;
+    line-height: 27px;
     border: 2px solid transparent;
     border-radius: 2px;
     outline: transparent;
+
     &:hover {
-      border: 2px solid transparentize($addition-color, 0.75);
+      border: 2px solid transparentize($addition-color, .75);
     }
+
     &:focus {
       border: 2px solid $addition-color;
     }
+
     &_formula {
       width: 100%;
       height: 100%;
@@ -203,6 +223,7 @@
       border-radius: 0;
     }
   }
+
   &__button {
     @include button();
   }
