@@ -6,9 +6,12 @@ import { Table } from '@/components/table/Table'
 import './assets/scss/all'
 import { Store } from './core/Store'
 import { rootReducer } from './store/rootReducer'
+import { storage } from './core/utils'
 
-const store = new Store(rootReducer, {
-	tableTitle: 'My Table',
+const store = new Store(rootReducer, storage('excel-state'))
+
+store.subscribe((state) => {
+	storage('excel-state', state)
 })
 
 const excel = new Excel('#app', {

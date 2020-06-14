@@ -4,6 +4,7 @@ import { shouldResize, shouldSelect, matrix, nextSelector } from '@/components/t
 import { toResize } from '@/components/table/table.resizer'
 import { TableSelection } from '@/components/table/TableSelection'
 import { $ } from '@/core/dom'
+import * as actions from '@/store/actions'
 
 export class Table extends ExcelComponent {
 	static className = `excel__table`
@@ -23,7 +24,7 @@ export class Table extends ExcelComponent {
 	}
 
 	toHTML() {
-		return createTable()
+		return createTable(20, this.store.getState())
 	}
 
 	init() {
@@ -47,14 +48,22 @@ export class Table extends ExcelComponent {
 	selectCell($cell) {
 		this.selection.select($cell)
 		this.$notify('table:select', $cell)
-		this.$dispatch({ type: 'TEST' })
+	}
+
+	async resizeTable(event) {
+		try {
+			const data = await toResize(event, this.$root)
+			this.$dispatch(actions.tableResize(data))
+		} catch (error) {
+			console.error(error.message)
+		}
 	}
 
 	onClick() {}
 
 	onMousedown() {
 		if (shouldResize(event)) {
-			toResize(event, this.$root)
+			this.resizeTable(event)
 		} else if (shouldSelect(event)) {
 			const $cell = $(event.target)
 			if (event.shiftKey) {

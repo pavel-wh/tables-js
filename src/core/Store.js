@@ -18,11 +18,10 @@ export class Store {
 		}
 	}
 	notify(action) {
-		this.rootReducer(this.#state, action)
+		this.#state = this.rootReducer(this.#state, action)
 		this.#listeners.forEach((listener) => listener(this.#state))
 	}
 	getState() {
 		return this.#state
 	}
-	setState() {}
 }
