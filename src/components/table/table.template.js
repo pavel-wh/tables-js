@@ -33,8 +33,12 @@ function createColumn(col, index, width) {
 
 function createCell(state, row) {
 	return function (_, col) {
-		const width = getWidth(state, col)
-		return `<div class="excel__cell" contenteditable data-id="${row}:${col}" data-col="${col}" style="width: ${width}"></div>`
+		const id = `${row}:${col}`
+		const width = getWidth(state.colState, col)
+		const data = state.dataState[id]
+		return `<div class="excel__cell" contenteditable data-id="${id}" data-col="${col}" style="width: ${width}">${
+			data || ''
+		}</div>`
 	}
 }
 
@@ -64,7 +68,7 @@ export function createTable(rowsCount = 26, state = {}) {
 	rows.push(createRow(cols, '', {}))
 
 	for (let row = 0; row < rowsCount; row++) {
-		const cells = new Array(colsCount).fill('').map(createCell(state.colState, row)).join('')
+		const cells = new Array(colsCount).fill('').map(createCell(state, row)).join('')
 		rows.push(createRow(cells, row + 1, state.rowState))
 	}
 
