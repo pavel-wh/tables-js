@@ -65,8 +65,9 @@ export function toResize(event, $root) {
 			}
 
 			resolve({
+				type,
 				value,
-				id: type === 'col' ? $parent.dataset.col : $parent.dataset.row,
+				id: $parent.dataset[type],
 			})
 
 			$resizer.deleteAttribute('style')
