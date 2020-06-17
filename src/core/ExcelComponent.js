@@ -5,8 +5,8 @@ export class ExcelComponent extends DOMListener {
 		this.name = options.name || ''
 		this.store = options.store
 		this.observer = options.observer
+		this.subscribe = options.subscribe || []
 		this.unsubscribers = []
-		this.storeSub = null
 
 		this.prepare()
 	}
@@ -34,8 +34,13 @@ export class ExcelComponent extends DOMListener {
 		this.store.notify(action)
 	}
 
-	$subscribe(fn) {
-		this.storeSub = this.store.subscribe(fn)
+	// In go changes only field who we subscribed
+	storeChanged(changes) {
+		console.log(changes)
+	}
+
+	isWatching(key) {
+		return this.subscribe.includes(key)
 	}
 
 	// Init component and add DOM listeners
@@ -47,6 +52,5 @@ export class ExcelComponent extends DOMListener {
 	destroy() {
 		this.removeDOMListeners()
 		this.unsubscribers.forEach((unsubscriber) => unsubscriber())
-		this.storeSub.unsubscribe()
 	}
 }
