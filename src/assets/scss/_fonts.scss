@@ -1,3 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+$roboto-font-path: "~roboto-fontface/fonts/";
 
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons&display=swap");
+@import "~roboto-fontface/css/roboto/sass/roboto-fontface.scss";
+
+$material-icons-font-path: "~material-icons/iconfont/";
+
+@import "~material-icons/iconfont/material-icons.scss";
