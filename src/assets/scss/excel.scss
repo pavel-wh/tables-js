@@ -149,9 +149,7 @@
 
   &__cell {
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: block;
     width: $cell-width;
     min-width: $info-cell-width;
     padding: 5px;

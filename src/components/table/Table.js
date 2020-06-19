@@ -5,6 +5,7 @@ import { toResize } from '@/components/table/table.resizer'
 import { TableSelection } from '@/components/table/TableSelection'
 import { $ } from '@/core/dom'
 import * as actions from '@/store/actions'
+import { defaultStyles } from '../../core/constants'
 
 export class Table extends ExcelComponent {
 	static className = `excel__table`
@@ -41,14 +42,17 @@ export class Table extends ExcelComponent {
 			this.selection.current.focus()
 		})
 
-		// this.$subscribe((state) => {
-		// 	console.log('TableState', state)
-		// })
+		this.$on('toolbar:setStyle', (style) => {
+			console.log('Toolbar to Table style', style)
+			this.selection.setStyle(style)
+		})
 	}
 
 	selectCell($cell) {
 		this.selection.select($cell)
 		this.$notify('table:select', $cell)
+
+		console.log($cell.getStyles(Object.keys(defaultStyles)))
 	}
 
 	async resizeTable(event) {

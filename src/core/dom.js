@@ -106,6 +106,13 @@ class DOM {
 		}
 		return this.$el.textContent.trim()
 	}
+
+	getStyles(styles = []) {
+		return styles.reduce((response, style) => {
+			response[style] = this.$el.style[style]
+			return response
+		}, {})
+	}
 }
 
 export function $(selector) {
