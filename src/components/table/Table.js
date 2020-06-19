@@ -42,17 +42,23 @@ export class Table extends ExcelComponent {
 			this.selection.current.focus()
 		})
 
-		this.$on('toolbar:setStyle', (style) => {
-			console.log('Toolbar to Table style', style)
-			this.selection.setStyle(style)
+		this.$on('toolbar:setStyle', (value) => {
+			this.selection.setStyle(value)
+			this.$dispatch(
+				actions.setStyle({
+					value,
+					ids: this.selection.selectedIDs,
+				})
+			)
 		})
 	}
 
 	selectCell($cell) {
 		this.selection.select($cell)
 		this.$notify('table:select', $cell)
-
-		console.log($cell.getStyles(Object.keys(defaultStyles)))
+		const styles = $cell.getStyles(Object.keys(defaultStyles))
+		console.log('to dispatch', styles)
+		this.$dispatch(actions.changeStyles(styles))
 	}
 
 	async resizeTable(event) {

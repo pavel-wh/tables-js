@@ -18,6 +18,10 @@ export class TableSelection {
 		this.group = []
 	}
 
+	get selectedIDs() {
+		return this.group.map(($el) => $el.id())
+	}
+
 	selectGroup($cells = []) {
 		this.clear()
 		$cells.forEach(($el) => {
