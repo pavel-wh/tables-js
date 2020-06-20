@@ -1,5 +1,6 @@
 import { toInlineStyles } from '@core/utils'
 import { defaultStyles } from '@core/constants'
+import { parse } from '@core/parse'
 // Helper
 const CHARS = {
 	A: 65,
@@ -42,9 +43,15 @@ function createCell(state, row) {
 			...defaultStyles,
 			...state.stylesState[id],
 		})
-		return `<div class="excel__cell" contenteditable data-id="${id}" data-col="${col}" style="${styles};width: ${width}">${
-			data || ''
-		}</div>`
+		return `
+			<div
+				class="excel__cell"
+				contenteditable
+				data-id="${id}"
+				data-col="${col}"
+				data-value="${data || ''}"
+				style="${styles};width: ${width}"
+			>${parse(data) || ''}</div>`
 	}
 }
 
