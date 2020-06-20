@@ -32,6 +32,23 @@ const jsLoaders = () => {
 	return loaders
 }
 
+const cssLoaders = (extra) => {
+	const loaders = [
+		{
+			loader: MiniCssExtractPlugin.loader,
+			options: {
+				hmr: isDev,
+				reloadAll: true,
+			},
+		},
+		'css-loader',
+	]
+	if (extra) {
+		loaders.push(extra)
+	}
+	return loaders
+}
+
 // Webpack configuration
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
@@ -81,23 +98,21 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.css$/,
+				use: cssLoaders(),
+			},
+			{
 				test: /\.s[ac]ss$/i,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: isDev,
-							reloadAll: true,
-						},
-					},
-					'css-loader',
-					'sass-loader',
-				],
+				use: cssLoaders('sass-loader'),
 			},
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
 				use: jsLoaders(),
+			},
+			{
+				test: /\.(ttf|woff|woff2|eot)$/,
+				use: ['file-loader'],
 			},
 		],
 	},

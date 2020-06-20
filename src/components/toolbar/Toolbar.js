@@ -1,48 +1,41 @@
-import { ExcelComponent } from '@core/ExcelComponent'
+import { createToolbar } from './toolbar.template'
+import { $ } from '@core/dom'
+import { ExcelStateComponent } from '@core/ExcelStateComponent'
+import { defaultStyles } from '@core/constants'
 
-export class Toolbar extends ExcelComponent {
+export class Toolbar extends ExcelStateComponent {
 	static className = `excel__toolbar`
 
 	constructor($root, options) {
 		super($root, {
 			name: 'Toolbar',
-			listeners: ['click', 'mouseover', 'mouseout'],
+			listeners: ['click'],
+			subscribe: ['currentStyles'],
 			...options,
 		})
 	}
 
+	prepare() {
+		this.initState(defaultStyles)
+	}
+
+	get template() {
+		return createToolbar(this.state)
+	}
+
 	toHTML() {
-		return `
-			<button class="excel__button">
-				<i class="material-icons">format_align_left</i>
-			</button>
-			<button class="excel__button">
-				<i class="material-icons">format_align_center</i>
-			</button>
-			<button class="excel__button">
-				<i class="material-icons">format_align_right</i>
-			</button>
-			<button class="excel__button">
-				<i class="material-icons">format_bold</i>
-			</button>
-			<button class="excel__button">
-				<i class="material-icons">format_italic</i>
-			</button>
-			<button class="excel__button">
-				<i class="material-icons">format_underline</i>
-			</button>
-		`
+		return this.template
 	}
 
-	onMouseover() {
-		console.log('Toolbar: onMouseover', event)
+	storeChanged(changes) {
+		this.setState(changes.currentStyles)
 	}
 
-	onMouseout() {
-		console.log('Toolbar: onMouseout', event)
-	}
-
-	onClick() {
-		console.log('Toolbar: onClick', event)
+	onClick(event) {
+		const $target = $(event.target)
+		if ($target.dataset.type === 'button') {
+			const value = JSON.parse($target.dataset.value)
+			this.$notify('toolbar:setStyle', value)
+		}
 	}
 }
