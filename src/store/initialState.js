@@ -1,7 +1,8 @@
 import { storage } from '@core/utils'
-import { defaultStyles } from '@core/constants'
+import { defaultStyles, defaultTitle } from '@core/constants'
 
 const defaultState = {
+	tableTitle: defaultTitle,
 	rowState: {},
 	colState: {},
 	dataState: {},

@@ -1,5 +1,5 @@
 import { toInlineStyles } from '@core/utils'
-import { defaultStyles } from '../../core/constants'
+import { defaultStyles } from '@core/constants'
 // Helper
 const CHARS = {
 	A: 65,

@@ -1,10 +1,12 @@
-import { TABLE_RESIZE, CHANGE_TEXT, CHANGE_STYLES, APPLY_STYLE } from './types'
+import { TABLE_RESIZE, CHANGE_TEXT, CHANGE_STYLES, APPLY_STYLE, CHANGE_TITLE } from './types'
 
 // Pure function
 export function rootReducer(state, action) {
 	let val
 	let field
 	switch (action.type) {
+		case CHANGE_TITLE:
+			return { ...state, tableTitle: action.title }
 		case TABLE_RESIZE:
 			field = action.data.type === 'col' ? 'colState' : 'rowState'
 			return {

@@ -5,7 +5,7 @@ import { toResize } from '@/components/table/table.resizer'
 import { TableSelection } from '@/components/table/TableSelection'
 import { $ } from '@/core/dom'
 import * as actions from '@/store/actions'
-import { defaultStyles } from '../../core/constants'
+import { defaultStyles } from '@core/constants'
 
 export class Table extends ExcelComponent {
 	static className = `excel__table`
