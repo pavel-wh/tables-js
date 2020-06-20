@@ -6,7 +6,7 @@ export class Formula extends ExcelComponent {
 	constructor($root, options) {
 		super($root, {
 			name: 'Formula',
-			listeners: ['input', 'click', 'keydown'],
+			listeners: ['input', 'keydown'],
 			subscribe: ['currentText'],
 			...options,
 		})
@@ -48,9 +48,5 @@ export class Formula extends ExcelComponent {
 			event.preventDefault()
 			this.$notify('formula:done')
 		}
-	}
-
-	onClick() {
-		console.log('Formula: onClick', event)
 	}
 }

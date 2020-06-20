@@ -25,7 +25,6 @@ export function camelCaseToDash(string) {
 }
 
 export function toInlineStyles(styles = {}) {
-	console.log(styles)
 	return Object.keys(styles)
 		.map((key) => `${camelCaseToDash(key)}: ${styles[key]}`)
 		.join(';')

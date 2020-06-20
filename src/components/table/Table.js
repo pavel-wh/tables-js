@@ -15,7 +15,7 @@ export class Table extends ExcelComponent {
 	constructor($root, options) {
 		super($root, {
 			name: 'Table',
-			listeners: ['click', 'mousedown', 'mouseup', 'mouseup', 'keydown', 'input'],
+			listeners: ['mousedown', 'keydown', 'input'],
 			...options,
 		})
 	}
@@ -58,7 +58,6 @@ export class Table extends ExcelComponent {
 		this.selection.select($cell)
 		this.$notify('table:select', $cell)
 		const styles = $cell.getStyles(Object.keys(defaultStyles))
-		console.log('to dispatch', styles)
 		this.$dispatch(actions.changeStyles(styles))
 	}
 
@@ -70,8 +69,6 @@ export class Table extends ExcelComponent {
 			console.error(error.message)
 		}
 	}
-
-	onClick() {}
 
 	onMousedown() {
 		if (shouldResize(event)) {
@@ -104,14 +101,6 @@ export class Table extends ExcelComponent {
 	onInput(event) {
 		// this.$notify('table:input', $(event.target))
 		this.updateTextInStore($(event.target).text())
-	}
-
-	onMousemove() {
-		console.log('Table: onMousemove')
-	}
-
-	onMouseup() {
-		console.log('Table: onMouseup')
 	}
 
 	updateTextInStore(value) {

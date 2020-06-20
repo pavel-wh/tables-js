@@ -35,9 +35,7 @@ export class ExcelComponent extends DOMListener {
 	}
 
 	// In go changes only field who we subscribed
-	storeChanged(changes) {
-		console.log(changes)
-	}
+	storeChanged(changes) {}
 
 	isWatching(key) {
 		return this.subscribe.includes(key)
