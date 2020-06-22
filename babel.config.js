@@ -1,3 +1,6 @@
+// Vendors
+const path = require('path')
+
 module.exports = {
 	presets: [
 		[
@@ -9,5 +12,17 @@ module.exports = {
 			},
 		],
 	],
-	plugins: ['@babel/plugin-proposal-class-properties'],
+	plugins: [
+		'@babel/plugin-proposal-class-properties',
+		[
+			'module-resolver',
+			{
+				root: ['.'],
+				alias: {
+					'@': path.resolve(__dirname, 'src'),
+					'@core': path.resolve(__dirname, 'src/core'),
+				},
+			},
+		],
+	],
 }
