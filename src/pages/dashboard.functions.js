@@ -25,7 +25,6 @@ export function getAllKeys() {
 export function createListTables() {
 	const keys = getAllKeys()
 
-	console.log(keys)
 	if (!keys.length) {
 		return `<ul class="dashboard__list"><li><p>Вы не создали ни одной таблицы...</p></li></ul>`
 	}
