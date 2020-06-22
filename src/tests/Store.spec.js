@@ -54,7 +54,7 @@ describe('Test class Store', () => {
 		expect(handler).toHaveBeenCalledWith(store.getState())
 	})
 
-	test('shhould NOT call sub if unsubscribe', () => {
+	test('should NOT call sub if unsubscribe', () => {
 		const unsub = store.subscribe(handler)
 
 		unsub()
