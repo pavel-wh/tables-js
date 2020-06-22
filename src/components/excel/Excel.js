@@ -1,6 +1,7 @@
 import { $ } from '@core/dom'
 import { Observer } from '@core/Observer'
 import { StoreSubscriber } from '../../core/StoreSubscriber'
+import { updateDate } from '../../store/actions'
 export class Excel {
 	constructor(options) {
 		this.components = options.components || []
@@ -29,6 +30,7 @@ export class Excel {
 	}
 
 	init() {
+		this.store.notify(updateDate())
 		this.subscriber.subscribeComponents(this.components)
 		this.components.forEach((component) => component.init())
 	}

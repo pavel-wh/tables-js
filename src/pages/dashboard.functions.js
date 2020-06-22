@@ -1,8 +1,11 @@
-export function toHTML() {
+export function toHTML(key) {
+	const id = key.split(':')[1]
+	const item = JSON.parse(localStorage.getItem(key))
+	const date = new Date(item.openedDate).toLocaleString('ru-RU')
 	return `
     <li class="dashboard__item">
-      <a href="#" class="dashboard__name">Имя</a>
-      <strong class="dashboard__date">20.06.2020</strong>
+      <a href="#excel/${id}" class="dashboard__name">${item.tableTitle}</a>
+      <strong class="dashboard__date">${date}</strong>
     </li>
   `
 }
