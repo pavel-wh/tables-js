@@ -1,4 +1,4 @@
-import { $ } from '@/core/dom'
+import { $ } from '@core/dom'
 
 export function toResize(event, $root) {
 	return new Promise((resolve) => {
