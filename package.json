@@ -10,7 +10,9 @@
     "eslint:fix": "eslint '**/*.js' --fix",
     "stylelint": "stylelint '**/*.scss'",
     "stylelint:fix": "stylelint '**/*.scss' --fix",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "husky": {
     "hooks": {
@@ -61,6 +63,7 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.9",
     "mini-css-extract-plugin": "^0.9.0",
     "prettier": "^2.0.5",
