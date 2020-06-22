@@ -7,11 +7,11 @@ export function createHeader(tableTitle) {
       value="${tableTitle}"
     >
     <div class="excel__container">
-      <button class="excel__button">
-        <i class="material-icons">delete</i>
+      <button class="excel__button" data-button="remove">
+        <i class="material-icons" data-button="remove">delete</i>
       </button>
-      <button class="excel__button">
-        <i class="material-icons">exit_to_app</i>
+      <button class="excel__button" data-button="exit">
+        <i class="material-icons" data-button="exit">exit_to_app</i>
       </button>
     </div>
   `

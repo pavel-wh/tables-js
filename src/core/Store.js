@@ -11,12 +11,11 @@ export class Store {
 
 	subscribe(fn) {
 		this.#listeners.push(fn)
-		return {
-			unsubscribe() {
-				this.#listeners = this.#listeners.filter((listener) => listener !== fn)
-			},
+		return () => {
+			this.#listeners = this.#listeners.filter((listener) => listener !== fn)
 		}
 	}
+
 	notify(action) {
 		this.#state = this.rootReducer(this.#state, action)
 		this.#listeners.forEach((listener) => listener(this.#state))
