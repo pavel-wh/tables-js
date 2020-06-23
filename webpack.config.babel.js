@@ -1,12 +1,12 @@
 // Vendors
-const path = require('path')
+import path from 'path'
 
 // Webpack Plugins
-const webpack = require('webpack')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+import webpack from 'webpack'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 // Assembly environment variables
 const isProd = process.env.NODE_ENV === 'production'
@@ -43,7 +43,7 @@ const cssLoaders = (extra) => {
 }
 
 // Webpack configuration
-module.exports = {
+export default {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
 	entry: {

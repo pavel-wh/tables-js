@@ -4,8 +4,8 @@
   "description": "JavaScript, Webpack, Babel, ESLint, SCSS",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js --open",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.babel.js --open",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js",
     "eslint": "eslint '**/*.js'",
     "eslint:fix": "eslint '**/*.js' --fix",
     "stylelint": "stylelint '**/*.scss'",
@@ -49,6 +49,7 @@
     "@babel/core": "^7.10.1",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
+    "@babel/register": "^7.10.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
