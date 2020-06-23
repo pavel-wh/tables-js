@@ -4,8 +4,9 @@
   min-width: 24px;
   height: 24px;
   padding: 3px;
-  color: transparentize($base-color, .5);
+  color: transparentize($addition-color, .5);
   text-align: center;
+  background-color: $background-color;
   border: 0;
   outline: transparent;
 
@@ -22,5 +23,15 @@
     color: $base-color;
     background-color: $addition-color;
     cursor: pointer;
+  }
+
+  &_danger {
+    color: transparentize($danger-color, .5);
+
+    &:hover {
+      color: $base-color;
+      background-color: $danger-color;
+      cursor: pointer;
+    }
   }
 }

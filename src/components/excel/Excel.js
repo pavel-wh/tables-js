@@ -1,7 +1,7 @@
 import { $ } from '@core/dom'
 import { Observer } from '@core/Observer'
 import { StoreSubscriber } from '@core/StoreSubscriber'
-import { updateDate } from '../../store/actions'
+import { updateDate } from '@/store/actions'
 import { preventDefault } from '@core/utils'
 export class Excel {
 	constructor(options) {

@@ -4,9 +4,9 @@ import { Toolbar } from '@/components/toolbar/Toolbar'
 import { Formula } from '@/components/formula/Formula'
 import { Table } from '@/components/table/Table'
 import { Store } from '@core/Store'
-import { rootReducer } from '../store/rootReducer'
-import { storage, debounce } from '../core/utils'
-import { normalizeInitialState } from '../store/initialState'
+import { rootReducer } from '@/store/rootReducer'
+import { storage, debounce } from '@core/utils'
+import { normalizeInitialState } from '@/store/initialState'
 import { Page } from '@core/Page'
 
 function storageName(param) {

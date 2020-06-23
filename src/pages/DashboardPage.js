@@ -1,5 +1,5 @@
 import { Page } from '@core/Page'
-import { $ } from '@/core/dom'
+import { $ } from '@core/dom'
 import { createListTables } from './dashboard.functions'
 
 export class DashboardPage extends Page {
