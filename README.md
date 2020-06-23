@@ -1,67 +1,41 @@
-# Excel at JS
+# Tables App
 
-## Requirements in project
+[Tables App](https://tables-js.web.app/) is a Node.js application with Webpack.js bundler and Babel.js transpiler for create single page application.
 
-* Webpack (imports/exports)  
+## Clone repo
 
-⋅⋅⋅Babel  
-⋅⋅⋅SCSS  
-⋅⋅⋅⋅⋅⋅2 Modes:  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅- Dev  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅Dev Server, SourceMaps, ESLint, Not Minified JS & CSS  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅- Prod  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅Minified and Concatenated Code  
+Clone this repo to your local machine using:
 
-* Git  
+```bash
+git clone https://github.com/pavel-wh/excel_js
+```
 
-⋅⋅⋅Branches:  
-⋅⋅⋅⋅⋅⋅Production  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅1.0.0
-⋅⋅⋅⋅⋅⋅Development  
-⋅⋅⋅⋅⋅⋅⋅⋅⋅1.0.1
+## Installation
 
-## Steps in project  
+Use the Node package manager [npm](https://www.npmjs.com/) to install this app.
 
-### 1. Create project folder and init project  
+```bash
+npm install
+```
 
-`mkdir excel_js`  
-`cd excel_js`  
-`npm init -y`  
+## Build Setup
 
-### 2. Git init commands  
+```bash
 
-`echo "# git" >> README.md`  
-`git init`  
-`git add README.md`  
-`git commit -m "init repo"`  
-`git remote add origin https://github.com/pavel-wh/excel_js.git`  
-`git push -u origin master`  
-`git checkout -b "webpack"` - create new branch and switch to it  
+# serve with hot reload at localhost:3000
+npm run start
 
-### 3. Install dependencies  
+# build for production
+npm run build
 
-`npm install --save-dev webpack webpack-cli`  
+# run tests
+npm run test
+```
 
-### 4. Install webpack plugins  
+## Contributing
 
-`npm install --save-dev html-webpack-plugin clean-webpack-plugin copy-webpack-plugin mini-css-extract-plugin`  
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### 5. Add webpack loaders  
+## License
 
-`npm install --save-dev css-loader sass-loader sass babel-loader @babel/core @babel/preset-env`  
-`npm install --save @babel/polyfill`  
-`npm i --save-dev @babel/plugin-proposal-class-properties`  
-
-### 6. Configure assembling environment  
-
-`npm install --save-dev cross-env webpack-dev-server`  
-
-### 7. Add ESLint  
-
-`npm install --save-dev eslint eslint-loader babel-eslint eslint-config-google`  
-
-### Git push remote repo  
-
-`git add --all`  
-`git commit -m "Finished config project"`  
-`git push -u origin webpack`  
+[MIT](https://choosealicense.com/licenses/mit/)

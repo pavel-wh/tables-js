@@ -1,5 +1,5 @@
 {
-  "name": "excel_js",
+  "name": "tables-js",
   "version": "1.0.0",
   "description": "JavaScript, Webpack, Babel, ESLint, SCSS",
   "main": "index.js",
@@ -29,21 +29,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pavel-wh/excel_js.git"
+    "url": "git+https://github.com/pavel-wh/tables-js.git"
   },
   "keywords": [
     "JavaScript",
-    "Webpack",
     "Babel",
+    "Webpack",
+    "Prettier",
     "ESLint",
+    "Stylelint",
+    "Husky",
     "SCSS"
   ],
   "author": "pB",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pavel-wh/excel_js/issues"
+    "url": "https://github.com/pavel-wh/tables-js/issues"
   },
-  "homepage": "https://github.com/pavel-wh/excel_js#readme",
+  "homepage": "https://github.com/pavel-wh/tables-js#readme",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/core": "^7.10.1",
