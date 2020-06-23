@@ -5,6 +5,7 @@ export function createHeader(tableTitle) {
       id="table-name"
       class="excel__input"
       value="${tableTitle}"
+      min="1"
     >
     <div class="excel__container">
       <button class="excel__button excel__button_danger" data-button="remove">
