@@ -78,8 +78,12 @@
     }
 
     a {
+      max-width: 80%;
+      margin: 0 20px 0 0;
+      overflow: hidden;
       color: $text-color;
       font-size: 14px;
+      white-space: nowrap;
       text-decoration: none;
 
       &:active,
