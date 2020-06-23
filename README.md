@@ -1,6 +1,6 @@
 # Tables App
 
-[Tables App](https://tables-js.web.app/) is a Node.js application with Webpack.js bundler and Babel.js transpiler for create single page application.
+[Tables App](https://tables-js.web.app/) is a Node.js single page application with Webpack.js bundler and Babel.js transpiler for create tables.
 
 ## Clone repo
 
