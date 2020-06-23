@@ -4,6 +4,7 @@ import { $ } from '@core/dom'
 import { changeTitle } from '@/store/actions'
 import { debounce } from '@core/utils'
 import { ActiveRoute } from '@/routes/ActiveRouter'
+import { defaultTitle } from '../../core/constants'
 
 export class Header extends ExcelComponent {
 	static className = `excel__header`
@@ -40,6 +41,6 @@ export class Header extends ExcelComponent {
 
 	onInput(event) {
 		const $target = $(event.target)
-		this.$dispatch(changeTitle($target.text()))
+		this.$dispatch(changeTitle($target.text() || defaultTitle + ': ' + Date.now()))
 	}
 }
