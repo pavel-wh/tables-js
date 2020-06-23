@@ -3,7 +3,7 @@ import { createTable } from '@/components/table/table.template'
 import { shouldResize, shouldSelect, matrix, nextSelector } from '@/components/table/table.helpers'
 import { toResize } from '@/components/table/table.resizer'
 import { TableSelection } from '@/components/table/TableSelection'
-import { $ } from '@/core/dom'
+import { $ } from '@core/dom'
 import * as actions from '@/store/actions'
 import { defaultStyles } from '@core/constants'
 import { parse } from '@core/parse'
@@ -26,7 +26,7 @@ export class Table extends ExcelComponent {
 	}
 
 	toHTML() {
-		return createTable(20, this.store.getState())
+		return createTable(150, this.store.getState())
 	}
 
 	init() {

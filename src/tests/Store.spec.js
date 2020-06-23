@@ -1,4 +1,4 @@
-import { Store } from '../core/Store'
+import { Store } from '@core/Store'
 
 const initialState = {
 	count: 0,

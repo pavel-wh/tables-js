@@ -3,7 +3,7 @@ import { createHeader } from './header.template'
 import { $ } from '@core/dom'
 import { changeTitle } from '@/store/actions'
 import { debounce } from '@core/utils'
-import { ActiveRoute } from '../../routes/ActiveRouter'
+import { ActiveRoute } from '@/routes/ActiveRouter'
 
 export class Header extends ExcelComponent {
 	static className = `excel__header`
